@@ -1,3 +1,3 @@
-### This Is A New Project Based On CSS Grid & Flex Box .
+# This Is A New Project Based On CSS Grid & Flex Box .
 ## The Project Is A Portfolio Inspired By Kevin Powell.
-# I Hope You Find It Usuful & Thanks In Advanced.
+### I Hope You Find It Usuful & Thanks In Advanced.
