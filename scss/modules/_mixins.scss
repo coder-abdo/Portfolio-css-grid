@@ -1,0 +1,12 @@
+@mixin container($width: 90%, $max-width: 75em) {
+    width: $width;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}

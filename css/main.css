@@ -431,3 +431,41 @@ h2 {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover; }
+
+.about-me {
+  width: 90%;
+  max-width: 50em;
+  margin: 0 auto;
+  padding-top: 3em; }
+  .about-me::after {
+    content: '';
+    display: table;
+    clear: both; }
+
+.about-img {
+  max-height: 25em; }
+  @media only screen and (min-width: 42em) {
+    .about-img {
+      float: left;
+      margin-right: 1em; } }
+
+.about-title {
+  margin-bottom: .25em; }
+
+.about-subtitle {
+  margin: .5em 0; }
+
+@supports (display: grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+  .about-img {
+    grid-row: 1 / 2;
+    grid-column: port / img; }
+  .about-title {
+    grid-row: 1 / 2;
+    grid-column: name / port;
+    align-self: end; }
+  .about-subtitle,
+  .about-text {
+    grid-column: port / port; } }
