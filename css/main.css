@@ -436,7 +436,7 @@ h2 {
   width: 90%;
   max-width: 50em;
   margin: 0 auto;
-  padding-top: 3em; }
+  padding: 5em 0; }
   .about-me::after {
     content: '';
     display: table;
@@ -469,3 +469,66 @@ h2 {
   .about-subtitle,
   .about-text {
     grid-column: port / port; } }
+
+.portfolio {
+  background-color: #e8e9eb;
+  padding: 5em 0;
+  text-align: center; }
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden; }
+  .portfolio-item img {
+    display: block;
+    width: 100%; }
+  .portfolio-item figcaption {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    background-color: rgba(3, 175, 194, 0.75);
+    color: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: top .25s ease-in-out; }
+  .portfolio-item:hover figcaption,
+  .portfolio-item:focus figcaption {
+    top: 0; }
+
+.portfolio-title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: auto; }
+  .featured .portfolio-title {
+    font-size: 5rem; }
+
+.portfolio-desc {
+  display: none; }
+  .featured .portfolio-desc {
+    display: block; }
+
+.portfolio-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  border-bottom: 3px solid #fff;
+  align-self: flex-start; }
+  .portfolio-link::after {
+    content: url("../img/arrow-white.svg");
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.5em; }
+
+@supports (display: grid) {
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em; }
+  .portfolio-item.featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2; } }
