@@ -64,6 +64,7 @@
         margin-left: 0.5em;
     }
 }
+
 @supports (display: grid) {
     .portfolio-items {
         display: grid;
@@ -77,4 +78,114 @@
         grid-column: 1 / span 2;
         grid-row: 1 / span 2;
     }
+}
+.portfolio-modal {
+    position: fixed;
+    top: 2em;
+    bottom: 2em;
+    right: 2em;
+    left: 2em;
+    display: none;
+    height: 80vh;
+    padding: 2em;
+    background-color: $white;
+    z-index: 50;
+    overflow-y: scroll;
+    box-shadow: 0 0 0 3em rgba(black, .7);
+    overflow-x: hidden;
+    &.is-open {
+        display: block;
+    }
+}
+.modal-button {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+.portfolio-header {
+    padding: 5em 0;
+    text-align: left;
+    background-size: cover;
+    background-position: center;
+}
+.portfolio-item:nth-of-type(1) .portfolio-header {
+    background-image: url("../img/portfolio-01.jpg"); 
+}
+.portfolio-item:nth-of-type(2) .portfolio-header {
+    background-image: url("../img/portfolio-02.jpg"); 
+}
+.portfolio-item:nth-of-type(3) .portfolio-header {
+    background-image: url("../img/portfolio-03.jpg"); 
+}
+.portfolio-item:nth-of-type(4) .portfolio-header {
+    background-image: url("../img/portfolio-04.jpg"); 
+}
+.portfolio-item:nth-of-type(5) .portfolio-header {
+    background-image: url("../img/portfolio-05.jpg"); 
+}
+.portfolio-title-box {
+    width: 70%;
+    padding: 3em;
+    background-color: rgba($accent, .75);
+    color: $white;
+    .portfolio-title {
+        font-size: 3.5rem;
+        display: inline-block;
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            margin: 0.5em 0;
+            background-color: $white;
+        }
+    }
+}
+.porfolio-subtitle{
+    font-size: 1rem;
+}
+.portfolio-content {
+    width: 85%;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: left;
+}
+img.portfolio-full-width {
+    width: 100vw;
+    max-width: initial;
+    height: 20vh;
+    margin: 2em calc(50% - 50vw);
+    object-fit: cover;
+}
+@include mq($width: 40em){
+    img.portfolio-pull-left{
+        width: 65%;
+        float: left;
+        margin-right: 2em;
+        margin-bottom: 2em;
+    }
+    img.portfolio-pull-right{
+        width: 65%;
+        float: right;
+        margin-left: 2em;
+    }
+}
+@keyframes modalIn {
+    0%{opacity: 0;}
+    100%{opacity:1;}
+}
+@keyframes modalOut{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
 }
