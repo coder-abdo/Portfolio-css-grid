@@ -12,9 +12,11 @@
         color: $dark-blue;
         line-height: 1.5;
         text-align: center;
+        @include mq{font-size: 3vw;}
         span {
             display: block;
             @include sans-serif(5.5rem, $accent);
+            @include mq{font-size: 10vw;}
         }
         &::before,
         &::after {

@@ -4,6 +4,10 @@ body {
     line-height: 1.6;
     background-color: $white;
     text-transform: capitalize;
+    font-size: 0.875rem;
+    @include mq{
+        font-size: 1.125rem;
+    }
 }
 h1, h2, p {
     margin-top: 0;
@@ -16,7 +20,9 @@ h1 {
     color: $accent;
     line-height: 1;
     font-size: 3.125rem;
+    @include mq{font-size: 4.25rem;}
 }
 h2 {
     @include sans-serif(2rem, $dark-gray);
+    @include mq{font-size: 3rem;}
 }

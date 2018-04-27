@@ -1,15 +1,11 @@
 .contact {
     @include container;
     padding: 5em 0;
-
+    display: flex;
+    flex-direction: column;
     h1 {
         text-align: center;
     }
-}
-
-form {
-    display: flex;
-    flex-direction: column;
 }
 label {
     display: block;
@@ -19,19 +15,56 @@ label {
 input, 
 textarea {
     display: block;
-    width: 90%;
-    padding: .75em;
+    width:100%;
+    padding: .75em 0;
     background-color: lighten($light-gray, 7%);
     border: 1px solid $light-gray;
     font-size: 1.25rem;
 }
 .button {
     display: inline-block;
-    width: auto;
+    width: 40%;
     margin-top: 1em;
-    margin-left: auto;
     padding: 0.5em 1.5em;
     border: none;
-    @include sans-serif($fz:2.5rem, $color: $white);
+    @include sans-serif($fz:1.75rem, $color: $white);
     background-color: $accent;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+@supports (display: grid){
+    form {
+        display: grid;
+        grid-template-areas: "name"
+                             "email"
+                             "message"
+                             "button";
+        grid-column-gap: 1em;
+        .button {
+            justify-self: end;
+        }
+        @include mq {
+            grid-template-areas: "name email"
+                                  "message message"
+                                  ". button";
+            .name {
+                grid-area: name;
+            }
+            .email {
+                grid-area: email;
+            }
+            .message {
+                grid-area: message;
+                textarea {
+                    height: 10em;
+                }
+            }
+            .button {
+                grid-area: button;
+                
+            }
+        }
+    }
 }

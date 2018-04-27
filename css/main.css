@@ -343,7 +343,11 @@ body {
   font-family: "Merriweather", serif;
   line-height: 1.6;
   background-color: #fff;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  font-size: 0.875rem; }
+  @media (min-width: 50em) {
+    body {
+      font-size: 1.125rem; } }
 
 h1, h2, p {
   margin-top: 0;
@@ -356,6 +360,9 @@ h1 {
   color: #03afc2;
   line-height: 1;
   font-size: 3.125rem; }
+  @media (min-width: 50em) {
+    h1 {
+      font-size: 4.25rem; } }
 
 h2 {
   font-size: 2rem;
@@ -365,6 +372,9 @@ h2 {
   text-transform: uppercase;
   font-family: "Six Caps", sans-serif;
   font-weight: 400; }
+  @media (min-width: 50em) {
+    h2 {
+      font-size: 3rem; } }
 
 .welcome {
   background-image: url(../img/header-bg.png);
@@ -380,6 +390,9 @@ h2 {
     color: #223843;
     line-height: 1.5;
     text-align: center; }
+    @media (min-width: 50em) {
+      .welcome h1 {
+        font-size: 3vw; } }
     .welcome h1 span {
       display: block;
       font-size: 5.5rem;
@@ -389,6 +402,9 @@ h2 {
       text-transform: uppercase;
       font-family: "Six Caps", sans-serif;
       font-weight: 400; }
+      @media (min-width: 50em) {
+        .welcome h1 span {
+          font-size: 10vw; } }
     .welcome h1::before, .welcome h1::after {
       content: '';
       display: block;
@@ -458,17 +474,29 @@ h2 {
 @supports (display: grid) {
   .about-me {
     display: grid;
-    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+    grid-column-gap: .75em; }
   .about-img {
     grid-row: 1 / 2;
     grid-column: port / img; }
+    @media (min-width: 50em) {
+      .about-img {
+        grid-row: 1 / 4; } }
   .about-title {
     grid-row: 1 / 2;
     grid-column: name / port;
     align-self: end; }
   .about-subtitle,
   .about-text {
-    grid-column: port / port; } }
+    grid-column: port / port; }
+    @media (min-width: 50em) {
+      .about-subtitle,
+      .about-text {
+        grid-column: image-end / port-end; } }
+  .about-subtitle {
+    grid-row: 2 / 3; }
+  .about-text {
+    grid-row: 3 / 4; } }
 
 .portfolio {
   background-color: #e8e9eb;
@@ -478,6 +506,8 @@ h2 {
 .portfolio-item {
   position: relative;
   overflow: hidden; }
+  .portfolio-item.featured figcaption {
+    padding: 3em; }
   .portfolio-item img {
     display: block;
     width: 100%; }
@@ -487,7 +517,7 @@ h2 {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 2em;
+    padding: 2em 1em;
     background-color: rgba(3, 175, 194, 0.75);
     color: #fff;
     text-align: left;
@@ -528,7 +558,10 @@ h2 {
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1em; }
+    grid-gap: .75em; }
+    @media (min-width: 50em) {
+      .portfolio-items {
+        grid-template-columns: repeat(4, 1fr); } }
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; } }
@@ -537,13 +570,11 @@ h2 {
   width: 90%;
   max-width: 75em;
   margin: 0 auto;
-  padding: 5em 0; }
-  .contact h1 {
-    text-align: center; }
-
-form {
+  padding: 5em 0;
   display: flex;
   flex-direction: column; }
+  .contact h1 {
+    text-align: center; }
 
 label {
   display: block;
@@ -553,20 +584,19 @@ label {
 input,
 textarea {
   display: block;
-  width: 90%;
-  padding: .75em;
+  width: 100%;
+  padding: .75em 0;
   background-color: #fbfbfc;
   border: 1px solid #e8e9eb;
   font-size: 1.25rem; }
 
 .button {
   display: inline-block;
-  width: auto;
+  width: 40%;
   margin-top: 1em;
-  margin-left: auto;
   padding: 0.5em 1.5em;
   border: none;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: #fff;
   letter-spacing: 0.15em;
   line-height: 1;
@@ -574,6 +604,31 @@ textarea {
   font-family: "Six Caps", sans-serif;
   font-weight: 400;
   background-color: #03afc2; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+@supports (display: grid) {
+  form {
+    display: grid;
+    grid-template-areas: "name" "email" "message" "button";
+    grid-column-gap: 1em; }
+    form .button {
+      justify-self: end; }
+    @media (min-width: 50em) {
+      form {
+        grid-template-areas: "name email" "message message" ". button"; }
+        form .name {
+          grid-area: name; }
+        form .email {
+          grid-area: email; }
+        form .message {
+          grid-area: message; }
+          form .message textarea {
+            height: 10em; }
+        form .button {
+          grid-area: button; } } }
 
 .footer {
   background-color: #223843;

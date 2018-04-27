@@ -6,6 +6,11 @@
 .portfolio-item {
     position: relative;
     overflow: hidden;
+    &.featured {
+        figcaption {
+            padding: 3em;
+        }
+    }
     img {
         display: block;
         width: 100%;
@@ -16,7 +21,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        padding: 2em;
+        padding: 2em 1em;
         background-color: rgba($accent, .75);
         color: $white;
         text-align: left;
@@ -63,7 +68,10 @@
     .portfolio-items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1em;
+        grid-gap: .75em;
+        @include mq{
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
     .portfolio-item.featured {
         grid-column: 1 / span 2;
