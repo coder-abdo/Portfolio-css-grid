@@ -5,6 +5,7 @@ body {
     background-color: $white;
     text-transform: capitalize;
     font-size: 0.875rem;
+    overflow-x: hidden;
     @include mq{
         font-size: 1.125rem;
     }

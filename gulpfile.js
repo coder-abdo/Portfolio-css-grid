@@ -12,8 +12,7 @@ server: '.'
 
 gulp.watch('./scss/**/*.scss', ['sass'], browserSync.reload);
 gulp.watch('./*.html').on('change', browserSync.reload);
-gulp.watch('./js/**/*.js', browserSync.reload);
-
+gulp.watch('./js/**/*.js').on('change', browserSync.reload);
 });
 
 // Compile Sass into CSS & inject into browsers
