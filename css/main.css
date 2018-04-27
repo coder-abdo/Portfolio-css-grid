@@ -532,3 +532,70 @@ h2 {
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; } }
+
+.contact {
+  width: 90%;
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 5em 0; }
+  .contact h1 {
+    text-align: center; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+label {
+  display: block;
+  margin-top: 1em;
+  color: #606060; }
+
+input,
+textarea {
+  display: block;
+  width: 90%;
+  padding: .75em;
+  background-color: #fbfbfc;
+  border: 1px solid #e8e9eb;
+  font-size: 1.25rem; }
+
+.button {
+  display: inline-block;
+  width: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  padding: 0.5em 1.5em;
+  border: none;
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  background-color: #03afc2; }
+
+.footer {
+  background-color: #223843;
+  padding: 5em 0;
+  text-align: center; }
+
+.social-icons {
+  width: 90%;
+  max-width: 15em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.75em auto 4em; }
+
+.social-icon {
+  width: 25%;
+  height: 25%; }
+
+.copyright::before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 4em auto; }
