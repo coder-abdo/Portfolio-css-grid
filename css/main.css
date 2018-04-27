@@ -376,7 +376,56 @@ h2 {
     h2 {
       font-size: 3rem; } }
 
+.menu-button {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background-color: initial;
+  border: 0; }
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: 0;
+  z-index: 10; }
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #03afc2; }
+
+nav li {
+  text-align: center;
+  transition: .25s; }
+  nav li:not(:last-child) {
+    border-bottom: 1px solid #223843; }
+  nav li:hover {
+    background-color: rgba(34, 56, 67, 0.5); }
+
+nav a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  font-size: 4rem;
+  color: #223843;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  padding: calc(100vh / 8) 0;
+  line-height: 0; }
+
 .welcome {
+  position: relative;
   background-image: url(../img/header-bg.png);
   background-size: cover;
   background-position: center;
